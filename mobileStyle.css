@@ -1,0 +1,109 @@
+@media only screen and (max-width: 700px) {
+    * {
+    margin: 0;
+    padding: 0;
+    border: 0px solid black;
+    }
+
+    html {
+    }
+
+    body {
+        background-image: url(Images/dark_bgd_optimised.jpg);
+    }
+    .pushy {
+        position: fixed;
+        z-index: 1;
+        background-image: url(Images/dark_bgd_opacity.png);
+        background-size: 100%;
+        overflow: auto;
+        visibility: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* enables momentum scrolling in iOS overflow elements */
+    }
+    .pushy ul:first-child {
+        background-image: none;
+        margin: 45px auto 0;
+        width: 230px;
+        padding: 10px 0 30px;
+        margin: 43px auto 60px;
+        box-shadow: none;
+        border: 2px solid white;
+        background-image: url(Images/dark_bgd_optimised.jpg);
+    }    
+
+    .pushy-open-left #container,
+    .pushy-open-left .push {
+    
+        overflow-x: hidden;
+        position: fixed;
+        filter: blur(12px);
+        
+    }
+
+    #big_div {
+    width: 100%;
+    box-shadow: 0 0 50px #1b1b1b;
+    }
+    
+    #menu_btn {
+        width: 100%;
+    }
+
+    #hogar_svg_head {
+    height: 200px;
+    background-position: center bottom;
+    background-image: url(Images/HogarPouchColor.svg);
+    background-size: 100%;
+    border-bottom: 10px solid #F55C22;
+    }
+
+    .outer_div {
+    }
+
+    .inner_div {
+        margin: 0 -8px;
+    }
+    
+    #poruci {
+        display: none;
+    }
+
+    #pozovi {
+        display: inherit;
+    }
+    
+    #pushy_container {
+    display: inherit;
+    }
+
+    #mapa {
+        background-image: none;
+        height: 0;
+        background-color: white;
+    }
+
+    #to_top_div {
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: fixed;
+    border-radius: 100%;
+    background-color: rgba(27, 27, 27, 0.8);
+    box-shadow: 0 0 20px #1b1b1b;
+    transition: 0.5s all;
+    vertical-align: middle;
+    }
+
+    #to_top_div:hover {
+    background-color: rgba(27, 27, 27, 0.97);
+    box-shadow: 0 0 50px #1b1b1b;
+    }
+
+    .orange_map_bottom {
+    width: 100%;
+    }
+    
+}
