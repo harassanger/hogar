@@ -52,10 +52,6 @@
 
     #hogar_svg_head {
     height: 200px;
-    background-position: center;
-    background-image: url(Images/HogarPouchColor.svg);
-    background-size: 100%;
-    border-bottom: 10px solid #F55C22;
     }
 
     .outer_div {
