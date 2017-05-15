@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+}
+
+body {
+  background-image: url(Images/FastFoodDrawnPattern.jpg);
+  background-repeat: repeat;
+  background-position: center;
+
+  background-attachment: fixed;
+  text-align: center;
+  height: 0;
+  color: #1b1b1b;
+}/*
+
+#menuMargin {
+    height: 50px;
+}*/
+
+#bigDiv {
+    background-image: url(Images/white-wall.png);
+    width: 700px;
+    margin: 0 auto 0;
+    box-shadow: 0 0 200px 0px #1b1b1b;
+    position: relative;
+    z-index: -1;
+    overflow: auto;
+    padding: 50px 0 20px;
+}
+
+.outer_div {
+    margin: 0 0 0px;
+    padding: 10px 20px 20px;
+}
+
+.innerDivOne {
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    border-radius: 8px;
+    border: 1px solid #1b1b1b;
+}
+
+.innerDivTwo {
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+#hogar_svg_head {
+    max-width: 100%;
+    height: 320px;
+    background-size: 100%;
+    background-position: bottom;
+    border-bottom: 10px solid #F55C22;
+    background-image: url(Images/HogarPouchColor.svg);
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+}
+
+h1 {
+    
+}
+
+#poruci {
+    
+}
+
+#pozovi {
+    display: none;
+}
+
+#menu_div {
+    width: 700px;
+}
+  
+#overlayBtnContainer {
+  display: none;
+}
+  
+#mobileOverlayDiv {
+	display: none;
+}  
+
+#hogarOverlaySvg {
+	display: none;
+}
+
+#overlayBtnContainer {
+	display: none;
+}
+
+#overlayButtons {
+  display: none;
+}
+  
+#topMainMenu {
+	width: 700px;
+	height: 50px;
+	position: fixed;
+	transform: translate(-50%, 0);
+	top: 0;
+  margin: 0 auto;
+  left: 50%;
+}  
+    
+#menuBtn {
+  background-color: #F55C22;
+  background-image: none;
+}
+   
+button:focus {
+  outline: none;
+}
+
+#menuBtn:focus {
+    outline: none;
+}
+
+.desktopMenuButtons {
+  cursor: pointer;
+  transition: box-shadow 300ms;
+}
+
+  /*burger to x menu icon*/
+.c-hamburger {
+  position: relative;
+  min-width: 200px;
+  height: 50px;
+  font-size: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 80px;
+  right: 80px;
+  height: 4px;
+  background: #1b1b1b;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background-color: #1b1b1b;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -10px;
+}
+
+.c-hamburger span::after {
+  bottom: -10px;
+}
+
+/*burger to x animation*/
+
+.c-hamburger--htx {
+  background-color: #F55C22;
+  /*border-top: 5px solid #F55C22;
+  border-right: 5px solid #F55C22;
+  border-left: 5px solid #F55C22;
+  box-sizing: border-box;*/
+}
+
+.c-hamburger--htx span {
+  transition: background 0s 0.15s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.15s, 0.15s;
+  transition-delay: 0.15s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+  background-color: #F55C22;
+}
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.15s;
+}
+
+/*Burger animation end of code*/
+
+
+.menuSideButtons {
+    display: none;
+}
+
+#hogarOneBtn {
+    background-image: url(Images/white-wall.png);
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: 900;
+    font-size: 20px;
+    position: absolute; 
+    left: 0px;
+    height: 50px;
+    width: 250px;
+    box-shadow: inset 0 5px #F55C22;
+}
+
+#hogarTwoBtn {
+    background-image: url(Images/dark-wood.jpg);
+    font-family: 'Shadows Into Light Two', cursive;
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 450px;
+    height: 50px;
+    width: 250px;
+    box-shadow: inset 100vw 0 #F55C22;
+}
+
+.mobileButtons {
+	display: none;
+}
+
+#hogarOneBtnMobile {
+}
+
+#hogarTwoBtnMobile {
+}
+
+#hogarOneMainDiv {
+	display:;
+}
+
+#hogarTwoMainDiv {
+	display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#navMenu{
+	display: none;
+}
+
+.menu-class {
+  padding-top: 15px;
+}
+
+#hogarOneSlideMenu {
+	display: ;
+  background-image: url(Images/white-wall.png);
+	color: #4d4d4d;
+}
+
+#hogarTwoSlideMenu {
+	display: none;
+  background-image: url(Images/dark-wood.jpg);
+	color: #b3b3b1;
+}
+
+#hogarOneSlideMenu a:hover {
+  color: black;
+}
+
+#hogarTwoSlideMenu a:hover {
+  color: #FFF;
+}
+
+
+
+#slideMenu {
+  position: fixed;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 50px;
+  width: 700px;
+  /* enables momentum scrolling in iOS overflow elements */
+}
+#slideMenu a {
+  display: block;
+  font-size: 18px;
+  font-family: 'Shrikhand', cursive;
+  outline: 0;
+  vertical-align: middle;
+  line-height: 40px;
+  height: 40px;
+  width: 70%;
+  min-width: 140px;
+  border-bottom: 1px dashed #3a3a3a;
+  margin: auto;
+}
+
+#slideMenu li:last-child a{
+  border-bottom: none;
+}
+
+#slideMenu ul{
+  width: 100%;
+  z-index: 0;
+  border-bottom: 5px solid #F55C22;
+  box-sizing: border-box;
+  /*box-shadow: inset -60px 0px #F55C22;  */
+}
+
+#slideMenu li{
+  display: block;
+  width: 50%;
+}
+
+#slideMenu li:nth-child(even){
+  width: 50%;
+}
+
+#slideMenu li:nth-child(odd){
+  width: 50%;
+  float: right;
+}
+
+#slideMenu li:last-child{
+  width: 100%;
+  display: block;
+  float: none;
+  padding: 20px 0;
+}
+
+#mainMenu {
+    
+}
+
+h3:first-child {
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+h3 {
+    padding: 10px 0 10px;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+}
+
+h4 {
+    padding: 20px 0 10px;
+    font-family: 'Shrikhand', cursive;
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 25px;
+    padding: 5px 0 5px;
+    margin: 10px -10px 0;
+    border-bottom: 2px dotted white;
+    font-family: 'Caveat', cursive;
+}
+
+p {
+    /*padding: 0 0 2px;*/
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tb_padding {
+    padding: 10px 0 20px;
+}
+/*
+p:first-child {
+    padding: 10px 0 2px;
+}
+*/
+.orange_split {
+    border-bottom: 3px dotted #F55C22;
+    margin-top: 10px;
+}
+
+#map_img {
+    margin: auto;
+    background-color: white;
+    border: 10px solid #F55C22;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+#hogar {
+    font-family: 'Freckle Face', cursive;
+    font-size: 100px;
+}
+
+#telefon {
+    font-family: 'Freckle Face', cursive;
+    font-size: 34px;
+    border-top: 5px solid #F55C22;
+    border-bottom: 5px solid #F55C22;
+}
+
+.sastavOne {
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: #3a3a3a;
+    letter-spacing: 3px;
+}
+
+.sastavTwo {
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: #b5b5b5;
+    letter-spacing: 3px;
+}
+
+.cena {
+    font-family: 'Bad Script', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 0 0 20px;
+}
+
+.borderBottomOne {
+    border-bottom: 2px dotted #1b1b1b;
+}
+
+.borderBottomTwo {
+    border-bottom: 2px dotted white;
+}
+
+#footer_item {
+    display: block;
+    visibility: hidden;
+    height: 26px;
+}
+
+#copy_bottom {
+}
+
+#toTopDiv {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transition: 0.5s all;
+}
+
+#toTopAnchor:hover {
+    background-color: rgba(27, 27, 27, 0.98);
+}
+
+#toTopAnchor {
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(27, 27, 27, 0.7);
+    border-radius: 100%;
+}
+
+#callIconFixedDiv {
+	display: none;
+}
+
+#callIconFixed {
+}
+
+footer a {
+    font-size: 24px;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 5px;
+    margin: auto;
+    padding: 70px 50px 20px;
+    text-shadow: 0 0 50px;
+}
+
+footer p {
+    padding: 10px 0;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 15px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 5px  #1b1b1b;
+}
+
+#pozoviteAnimation {
+  display: none;
+}
+

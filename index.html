@@ -1,541 +1,195 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>HOGAR - PORUČI I POKUPI</title>
+  <head>
+    <title>HOGAR - PORUČI I POKUPI</title>
         
-        <link type="text/css" rel="stylesheet" href="style.css"/>
-        <link type="text/css" rel="stylesheet" href="mobileStyle.css"/>
-        <link type="text/css" rel="stylesheet" href="pushy.css"/>
-        <link type="text/css" rel="stylesheet" href="hamburgers.css"/>
+    <link type="text/css" rel="stylesheet" href="hogarStyle.css"/>
+    <link type="text/css" rel="stylesheet" href="hogarMobileStyle.css"/>
         
-        <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet"><!--HOGAR font-->
-        <link href="https://fonts.googleapis.com/css?family=Freckle+Face&amp;subset=latin-ext" rel="stylesheet"><!--TELEFON font-->
-        <link href="https://fonts.googleapis.com/css?family=Shrikhand&amp;subset=latin-ext" rel="stylesheet"><!--ARTIKL font-->
-        <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet"><!--Font Proizvod-->
-        <link href="https://fonts.googleapis.com/css?family=Caveat&amp;subset=latin-ext" rel="stylesheet"><!--Pod kategorija-->
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC&amp;subset=latin-ext" rel="stylesheet"><!--SASTAV font-->
-        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet"><!--CENA font-->
-        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&amp;subset=latin-ext" rel="stylesheet"><!--NAVIGATION font-->
-        <link rel="icon" type="image/png" href="Images/pizza_slice.ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="hogarScript.js"></script>
+		<!-- <script src="live.js"></script> -->
+		<script src="zenscroll-min.js"></script>
+		<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-        <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+        <!--HOGAR font-->
         
-    </head>
-    <body >
+    <link href="https://fonts.googleapis.com/css?family=Freckle+Face&amp;subset=latin-ext" rel="stylesheet">
+        <!--TELEFON font-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&amp;subset=latin-ext" rel="stylesheet">
+        <!--ARTIKL font-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+        <!--Font Proizvod-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Caveat&amp;subset=latin-ext" rel="stylesheet">
+        <!--Pod kategorija-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&amp;subset=latin-ext" rel="stylesheet">
+        <!--SASTAV font-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+        <!--CENA font-->
+        
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two&amp;subset=latin-ext" rel="stylesheet">
+        <!--NAVIGATION font-->
+        
+    <link rel="icon" type="image/png" href="Images/pizza_slice.ico">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+        
+  </head>
+	<body>
+		
+		<div id="overlayBtnContainer">
+			<button id="mobileOverlayButtonOne" class="overlayButtons">1</button>
+			<button id="mobileOverlayButtonTwo" class="overlayButtons">2</button>
+		</div>
+		
+		<div id="mobileOverlayDiv"> 
+			<p id="overlayDesc">Izaberite<p>
+			<h1 id="overlayTitle">HOGAR</h1>
+		</div>
+		
+			<div id="hogarOverlaySvg"></div>
+	 
+    <div id="topMainMenu">
+	   	<button id="hogarOneBtn" class="desktopMenuButtons">Hogar 1</button>
+	   	<button id="hogarTwoBtn" class="desktopMenuButtons">Hogar 2 </button>
+	   	<button id="hogarOneBtnMobile" class="mobileButtons">1</button>
+			<button  id="menuBtn" class="c-hamburger c-hamburger--htx">
+			  <span>toggle menu</span>
+	   	<button id="hogarTwoBtnMobile" class="mobileButtons">2</button>
+			</button>
+	 	</div>
+
+
+    <div id="slideMenu">
+      <nav id="navMenu" class="hogarSlide">
+        <!--HOGAR one slide menu-->
+        <ul id="hogarOneSlideMenu" class="menu-class openMenu">
+			    <li><a href="#onePileciBatakDiv"> PILEĆI BATAK</a>
+			    </li>
+			    <li><a href="#onePljeskavicaDiv">PLJESKAVICA</a>
+			    </li>
+			    <li><a href="#oneVesalicaDiv"> VEŠALICA</a>
+			    </li>
+			    <li><a href="#onePileciFileDiv"> PILEĆI FILE</a>
+			    </li>
+			    <li><a href="#oneDzigericaDiv"> DZIGERICA</a>
+			    </li>
+			    <li><a href="#oneKareDiv"> KARÉ </a>
+			    </li>
+			    <li><a href="#oneSendvicDiv"> SENDVIČ</a>
+			    </li>
+			    <li><a href="#oneCevapDiv"> ĆEVAP</a>
+			    </li>
+			    <li><a href="#onePicaDiv"> PICA</a>
+			    </li>
+			    <li><a href="#onePiroskaDiv"> PIROŠKA</a>
+			    </li>
+			    <li><a href="#mapHogarOneHref"> DO NAS?</a>
+			    </li>
+			  </ul>
+     <!--End of HOGAR one slide menu-->
      
-        <!-- Menu Button -->
-        <button id="menu_btn" class="menu-btn">&#9776; Menu</button>
-        <!-- Menu Container-->
-        <nav id="pushy_container" class="pushy pushy-left">
-            <ul>
-                <li class="pushy-link" ><a href="#paste_div">&bull; PASTE &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#sosevi_div">&bull; SOSEVI &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#pica_div">&bull; PICA PARČE &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#salata_div">&bull; SALATE &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#lepinje_div">&bull; LEPINJE &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#dodaci_div">&bull; DODACI &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#pilece_belo_div">&bull; PILEĆE BELO &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#krilca_div">&bull; KRILCA &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#rolovano_pile_div">&bull; ROLOVANO &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#batacici_div">&bull; BATAČIĆI &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#sendvici_div">&bull; SENDVIČI &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#rostilj_div">&bull; ROŠTILJ &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="#map_href">&bull; DO NAS? &bull;</a>
-                 </li> <hr>
-                <li class="pushy-link"><a href="tel:0606838587">&bull; POZOVI &bull;<br> 
-                &bull; 060 68 38 58 7 &bull;</a>
-                 </li><hr>
-            </ul>
-        </nav>
-       
-        <div id="big_div" class="push">
+     <!--HOGAR two slide menu-->
+         <ul id="hogarTwoSlideMenu" class="menu-class">
+			        <li><a href="#sosevi_div"> SOSEVI</a>
+			         </li>
+			        <li><a href="#paste_div"> PASTE </a>
+			         </li>
+			        <li><a href="#salata_div"> SALATE</a>
+			         </li>
+			        <li><a href="#pica_div"> PICA PARČE</a>
+			         </li>
+			        <li><a href="#dodaci_div"> DODACI</a>
+			         </li>
+			        <li><a href="#lepinje_div"> LEPINJE</a>
+			         </li>
+			        <li><a href="#krilca_div"> KRILCA</a>
+			         </li>
+			        <li><a href="#pilece_belo_div"> PILEĆE BELO</a>
+			         </li>
+			        <li><a href="#batacici_div"> BATAČIĆI</a>
+			         </li>
+			        <li><a href="#rolovano_pile_div"> ROLOVANO</a>
+			         </li>
+			        <li><a href="#rostilj_div"> ROŠTILJ</a>
+			         </li>
+			        <li><a href="#sendvici_div"> SENDVIČI</a>
+			         </li>
+			        <li><a href="#mapHogarTwoHref"> DO NAS?</a>
+			         </li>
+			    </ul>
+     <!--End of Hogar Two Slide Menu-->
+	     		<!-- <div id="blurMenuBack"></div> -->
+	   
+	    </nav>
+	      
+    </div>
+	    
+	    <div id="menuMargin"></div> 
+	   
+	    <div id="bigDiv" class="">   
+	      <div id="hogar_svg_head"></div>
+	      <h1 id="hogar">HOGAR 1</h1>
+	      <span id="tel_margin"></span>
+	      <h2 id="telefon">
+  	       <a id="brojTelefona" href="tel:0606838587">&raquo; <span id="prikazTelefona">060 68 38 58 7</span>
+    	       <span id="pozovi">&laquo; <br> 
+    	        <img id="call_icon" src="Images/phone.svg"> 
+    	       </span>
+    	     </a>
+    	    <span id="poruci">- PORUČI I POKUPI &laquo;</span>
+    	   </h2>
+	
+				 <!-- Hogar 1 ceo menu-->   
+				<div id="hogarOneMainDiv"></div>     
+	      
+				<!-- Hogar 2 ceo menu-->   
+				<div id="hogarTwoMainDiv">
+			</div>      
 
+	    <img id="map_img" src="Images/HogarSvgMap.svg">
+	
+	    
+	<footer> 
+	    <p id="copy_bottom">copyright: <br> Harassanger 2016</p>      
+	    <a id="mail" href="mailto:milosdjakovic@outlook.com.com?Subject=Hello" target="_top">&#8608;Send Mail&#8606;</a>     
+	</footer>
+	             
+	    
+	    
+	    
+	    </div> 
+	    <div id="toTopDiv" class="slideUpButtonsDiv">
+	    	<a id="toTopAnchor" href="#menuMargin" class="slideUpButtonsAnchor"><img src="Images/TopArrow.png"></a>
+	    </div>
+
+	    <div id="callIconFixedDiv" class="slideUpButtonsDiv">
+	    	<a id="callIconFixed" href="tel:+381606838587" class="slideUpButtonsAnchor"><img src="Images/phone.svg"></a>
+	    </div>
+
+	    <div id="pozoviteAnimation">
+	    	<!-- Call button POZOVITE
+	    	<p id="pozoviteText">
+	    		<span id="pozoviteArrow">&#8606;</span> 
+	    		POZOVITE
+	    	</p> --> 
+
+	    	<!-- Call button PORUCI I POKUPI -->
+	    	<p id="pozoviteText">
+	    		<span id="pozoviteArrow">&#8606;</span> 
+	    		PORUČI I POKUPI
+	    	</p>
+	    </div>
+	</body>
         
-       <!--Ceo menu je u ovom div-u-->
-           <div id="menu_margin"></div>    
-           <div id="hogar_svg_head"></div>
-           <h1 id="hogar">HOGAR</h1>
-           <span id="tel_margin"></span>
-           <h2 id="telefon"><a href="tel:0606838587">&raquo; 060 68 38 58 7 <span id="pozovi">&laquo; <br> <img id="call_icon" src="Images/phone.svg"> </span></a><span id="poruci">- PORUČI I POKUPI &laquo;</span></h2>
-        <!--PASTE-->
-       
-        <div id="paste_div" class="outer_div">
-           
-            <h3 class="lobster">&#8606;PASTE&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            
-            <h5 >GOTOVE:</h5>
-            <h4 >PESTO</h4>
-            <p class="sastav">PEČURKE, PESTO SOS, NEUTRALNA PAVLAKA, LUK, BRAŠNO.</p>
-            <div class="cena">
-            <p>100 din - 200 g</p>
-                <p>190 din - 400 g</p>
-            </div>
-            <p class="border_bottom"></p>
-            <h4>BOLONJEZE</h4>
-            <p class="sastav">JUNEĆE MESO, PELAT PARADAJZA, CRNI LUK, BELI LUK, PARMEZAN.</p>
-            <div class="cena">
-            <p>120 din - 200 g</p>
-            <p>220 din - 400 g</p>
-            </div>
-            <p class="border_bottom"></p>
-            <h4>KARBONARA</h4>
-            <p class="sastav">SLANINA, JAJE, NEUTRALNA PAVLAKA, PARMEZAN.</p>
-            <div class="cena">
-            <p>120 din - 200 g</p>
-            <p>220 din - 400 g</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h5 >PO NARUDZBINI:</h5>
-            <div >
-            <h4>MONTANARA</h4>
-            <p class="sastav">PILETINA, NEUTRALNA PAVLAKA, CRNI LUK, PEČURKE, PERŠUN.</p>
-            <p class="cena ">280 din - 400 g</p>
-            <p class="border_bottom"></p>
-            <h4>ČETIRI SIRA</h4>
-            <p class="sastav">KAČKAVALJ, NEUTRALNA PAVLAKA, MOCARELA, GORGONZOLA, SJENIČKI SIR.</p>
-            <p class="cena ">300 din - 400 g</p>
-            <p class="border_bottom"></p>
-            <h4>LJUTA PASTA</h4>
-            <p class="sastav">HAMBURŠKA SLANINA,CRNI LUK, LJUTA PAPRIKA, ČILI, PELAT.</p>
-            <p class="cena ">250 din - 400 g</p>
-            <p class="border_bottom"></p>
-            <h4 id="veg_posna">VEGETARIJANSKA POSNA</h4>
-            <p class="sastav">PELAT, ŠARGAREPA, PAPRIKA ZELENA, BELI LUK, CRNI LUK, PEČURKE.</p>
-            <p class="cena ">250 din - 400 g</p>
-            <p class="border_bottom"></p>
-            <h4>PILETINA U GORGONZOLI</h4>
-            <p class="sastav">NEUTRALNA PAVLAKA, GORGONZOLA, PILETINA, BELO VINO, SO, BIBER.</p>
-            <p class="cena ">300 din - 400 g</p>
-            <p class="border_bottom"></p>
-            </div>
-        </div>                  
-        </div>    
-        
-        <div class="orange_split"></div>
-        
-        <!--SOSEVI-->
-        
-        <div id="sosevi_div" class="outer_div">
-           
-            <h3 >&#8606;SOSESVI&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>PESTO</h4>
-            <p class="sastav">CRNI LUK, PEČURKE, PESTO SOS, NEUTRALNA PAVLAKA, ZAČINI.</p>
-            <p class="cena ">500 din - 1 kg</p>
-            <p class="border_bottom"></p>
-            <h4>BOLONJEZE</h4>
-            <p class="sastav">JUNEĆE MESO, PARADAJZ PELAT, CRNI LUK, BELI LUK, ZAČINI.</p>
-            <p class="cena ">700 din - 1 kg</p>
-            <p class="border_bottom"></p>
-            <h4>KARBONARA</h4>
-            <p class="sastav">PANČETA, BELI LUK, JAJE, NEUTRALNA PAVLAKA, KAČKAVALJ.</p>
-            <p class="cena ">700 din - 1 kg</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>     
-        
-        <div class="orange_split"></div>                 
-        
-        <!--PICA PARČE-->
-        
-        <div id="pica_div" class="outer_div ">
-           
-            <h3 >&#8606;PICA PARČE&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>KAPRIĆOZA</h4>
-            <p class="sastav">TESTO, PELAT PARADAJZA, ŠUNKA, KAČKAVALJ, PEČURKE.</p>
-            <p class="cena ">100 din - 1/6</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>      
-        
-        <div class="orange_split"></div>                 
-        
-        <!--OBROK SALATE-->
-        
-        <div id="salata_div" class="outer_div ">
-           
-            <h3 >&#8606;SALATE&#8608;</h3>
-            <div id="" class="inner_div ">
-            <h4>CEZAR SALATA</h4>
-            <p class="sastav">PILETINA, KRUTONI, ZELENA SALATA, DRESING, PANČETA.</p>
-            <p class="cena ">160 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>GRČKA SALATA</h4>
-            <p class="sastav">PARDAJZ, KRASTAVAC, FETA , MASLINE, KUVANO JAJE, LUK.</p>
-            <p class="cena ">160 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PASTA SALATA</h4>
-            <p class="sastav">TESTENINA, DRESING, TUNJEVINA, PASULJ, KUKURUZ ŠEĆERAC, MASLINE.</p>
-            <p class="cena ">160 din</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>      
-        
-        <div class="orange_split"></div>                 
-        
-        <!--LEPINJE-->
-        
-        <div id="lepinje_div" class="outer_div ">
-           
-            <h3 >&#8606;LEPINJE&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>OBIČNA</h4>
-            <p class="sastav">BRAŠNO, SO, VODA.</p>
-            <p class="cena ">15 din - 130 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>DUGULJASTA</h4>
-            <p class="sastav">BRAŠNO, SO, VODA.</p>
-            <p class="cena ">20 din - 150 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>TORTILJE</h4>
-            <p class="sastav">BRAŠNO, SO, VODA.</p>
-            <p class="cena ">20 din - 150 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PANCEROTE</h4>
-            <p class="sastav">TESTO, ŠUNKA, KAČKAVALJ.</p>
-            <p class="cena ">80 din - 200 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>SLATKA PICA</h4>
-            <p class="sastav">NUTELA, BANANA.</p>
-            <p class="cena ">130 din - Ø 20</p>
-            <p class="border_bottom"></p>
-            
-            <h4>POSNA PICA</h4>
-            <p class="sastav">TESTO, TUNJEVINA, PELAT, POSNI KAČKAVALJ, KUKURUZ ŠEĆERAC, PASULJ, ŠAMPINJONI.</p>
-            <p class="cena ">280 din - Ø 30</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>      
-        
-        <div class="orange_split"></div>                 
-        
-        <!--DODACI-->
-        
-        <div id="dodaci_div" class="outer_div ">
-           
-            <h3 >&#8606;DODACI&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>PILEĆA SALATA</h4>
-            <p class="sastav">PILETINA, PAVLAKA, MAJONEZ, SENF, ZAČINI, KROMPIR, ŠARGAREPA.</p>
-            <p class="cena ">30 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>FRANCUSKA SALATA</h4>
-            <p class="sastav">PAVLAKA, MAJONEZ, JAJE, KROMPIR, ŠARGAREPA, GRAŠAK.</p>
-            <p class="cena ">30 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>RIŽOTO</h4>
-            <p class="cena ">30 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>KAJMAK</h4>
-            <p class="cena ">30 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>POHOVAN KAČKAVALJ</h4>
-            <p class="cena ">50 din - 50 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>POMFRIT</h4>
-            <p class="cena ">50 din - 100 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>ŠPAGETI</h4>
-            <p class="cena ">40 din - 100 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>TALJATELE</h4>
-            <p class="cena ">50 din - 100 g</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>      
-        
-        <div class="orange_split"></div>                 
-        
-        <!--PILEĆE BELO-->
-        
-        <div id="pilece_belo_div" class="outer_div ">
-           
-            <h3 >&#8606;PILEĆE BELO&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>POHOVANI ŠTAPIĆI</h4>
-            <p class="sastav">PILEĆI FILE, JAJE, BRAŠNO, PREZLE.</p>
-            <div class="cena">
-                <p>260 din - 300 g</p>
-                <p>480 din - 600 g</p>
-                <p class="">790 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h4>KORN FLEKS ŠTAPIĆI</h4>
-            <p class="sastav">PILEĆI FILE, JAJE, BRAŠNO, KORN FLEKS.</p>
-            <div class="cena">
-                <p>260 din - 300 g</p>
-                <p>480 din - 600 g</p>
-                <p class="">790 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h4>SUSAM ŠTAPIĆI</h4>
-            <p class="sastav">PILEĆI FILE, JAJE, BRAŠNO, SUSAM.</p>
-            <div class="cena">
-                <p>290 din - 300 g</p>
-                <p>580 din - 600 g</p>
-                <p class="">900 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h4>KIKIRIKI ŠTAPIĆI</h4>
-            <p class="sastav">PILEĆI FILE, JAJE, BRAŠNO, KIKIRIKI.</p>
-            <div class="cena">
-                <p>290 din - 300 g</p>
-                <p>580 din - 600 g</p>
-                <p class="">900 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>      
-        
-        <div class="orange_split"></div>                 
-        
-        <!--KRILCA-->
-        
-        <div id="krilca_div" class="outer_div ">
-           
-            <h3 >&#8606;KRILCA&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>DOMAĆA KRILCA</h4>
-            <p class="sastav">BEZ VRHOVA.</p>
-            <div class="cena">
-                <p>150 din - 300 g</p>
-                <p>300 din - 600 g</p>
-                <p class="">490 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h4>LJUTA KRILCA</h4>
-            <p class="sastav">BEZ VRHOVA.</p>
-            <div class="cena">
-                <p>180 din - 300 g</p>
-                <p>360 din - 600 g</p>
-                <p class="">540 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-            <h4>KARAMEL KRILCA</h4>
-            <p class="sastav">BEZ VRHOVA.</p>
-            <div class="cena">
-                <p>200 din - 300 g</p>
-                <p>400 din - 600 g</p>
-                <p class="">650 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>       
-        
-        <div class="orange_split"></div>                 
-        
-        <!--ROLOVANO PILE-->
-        
-        <div id="rolovano_pile_div" class="outer_div ">
-           
-            <h3 >&#8606;ROLOVANO&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>ROLOVANO PILE</h4>
-            <p class="sastav">PILE BEZ KOSTIJU, ŠUNKA, KAČKAVALJ, PEČURKE, SENF, VEGETA, BIBER.</p>
-            <p class="cena ">750 din - 1 kg</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>       
-        
-        <div class="orange_split"></div>                 
-        
-        <!--BATAČIĆI-->
-        
-        <div id="batacici_div" class="outer_div ">
-           
-            <h3 >&#8606;BATAČIĆI&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>POHOVANI BATAČIĆI</h4>
-            <p class="sastav">PILEĆI FILE, JAJE, BRAŠNO, PREZLE, KORNFLEKS.</p>
-            <div class="cena">
-                <p>180 din - 300 g</p>
-                <p>360 din - 600 g</p>
-                <p class="">540 din - 1 kg</p>
-            </div>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>       
-        
-        <div class="orange_split"></div>                 
-        
-        <!--SENDVIČI-->
-        
-        <div id="sendvici_div" class="outer_div ">
-           
-            <h3 >&#8606;SENDVIČI&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>HOGAR PILEĆI</h4>
-            <p class="sastav">LEPINJA, ROLOVANA PILETINA, TARTAR SOS, PRILOG PO IZBORU.</p>
-            <p class="cena ">150 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>BEČKI</h4>
-            <p class="sastav">LEPINJA, POHOVANA SVINJSKA ŠNICLA, PRILOG PO IZBORU.</p>
-            <p class="cena ">160 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PARIŠKI</h4>
-            <p class="sastav">LEPINJA, POHOVANA PILETINA, PRILOG PO IZBORU.</p>
-            <p class="cena ">150 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>SRPSKI</h4>
-            <p class="sastav">LEPINJA, SUVI VRAT, KAČKAVALJ, PRILOG PO IZBORU.</p>
-            <p class="cena ">150 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>ITALIJANSKI</h4>
-            <p class="sastav">LEPINJA, ŠUNKA, KAČKAVALJ, PILEĆA SALATA, PRILOG PO IZBORU</p>
-            <p class="cena ">130 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>POSNI</h4>
-            <p class="sastav">TUNJEVINA, KUKURUZ ŠEĆERAC, PASULJ, ŠAMPINJONI, KAČKAVALJ, MASLINE, ZELENA SALATA ILI KRASTAVAC.</p>
-            <p class="cena ">130 din</p>
-            <p class="border_bottom"></p>
-            
-            <h4>POHOVANI KAČKAVALJ</h4>
-            <p class="cena ">120 din - 100 g</p>
-            <p class="border_bottom"></p>
-            
-        </div>    
-        </div>        
-        
-        <div class="orange_split"></div>                 
-        
-        <!--ROŠTILJ-->
-        
-        <div id="rostilj_div" class="outer_div ">
-           
-            <h3 >&#8606;ROŠTILJ&#8608;</h3>
-            
-            <div id="" class="inner_div ">
-            <h4>ŠIŠ ĆEVAP</h4>
-            <p class="sastav">LEPINJA, ROŠTILJSKO MESO, CRNI LUK, PRAZI LUK, SO, BIBER.</p>
-            <p class="cena ">150 din - 200 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PUNJENI ŠIŠ ĆEVAP</h4>
-            <p class="sastav">LEPINJA, ROŠTILJSKI MESO, KAČKAVALJ, CRNNI LUK, PRAZI LUK, SO, BIBER.</p>
-            <p class="cena ">180 din - 230 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PLJESKAVICA</h4>
-            <p class="sastav">LEPINJA, ROŠTILJSKKO MESO, CRNI LUK, PRAZI LUK.</p>
-            <p class="cena ">150 din -  200 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PUNJENA PLJESKAVICA</h4>
-            <p class="sastav">LEPINJA, ROŠTILJSKO MESO, KAČKVALJ, CRNI LUK, PRAZI LUK.</p>
-            <p class="cena ">180 din -  230 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PILEĆI BATAK</h4>
-            <p class="sastav">LEPINJA, PILEĆI BATAK BEZ KOSTIJU.</p>
-            <p class="cena ">180 din -  150 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>BATAK U SLANINI</h4>
-            <p class="sastav">LEPINJA, MESO BEZ KOŽICE I KOSTIJU.</p>
-            <p class="cena ">210 din -  180 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>PILEĆI FILE U SLANINI</h4>
-            <p class="sastav">LEPINJA, PILEĆI FILE, SLANINA.</p>
-            <p class="cena ">210 din -  180 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>SVINJSKI FILE</h4>
-            <p class="sastav">LEPINJA, SVINJSKI FILE.</p>
-            <p class="cena ">230 din -  150 g</p>
-            <p class="border_bottom"></p>
-            
-            <h4>DIMLJENA VEŠALICA</h4>
-            <p class="sastav">LEPINJA, SVINJSKA PEČENICA.</p>
-            <p class="cena ">230 din -  150 g</p>
-            <p id="map_href" class="border_bottom"></p>
-            
-        </div>    
-        </div> 
-        
-        <div class="orange_split"></div>  
-           
-        <img id="map_img" src="Images/HogarSvgMap.svg">
-    
-        
-    <footer> 
-        <p id="copy_bottom">copyright: <br> Harassanger 2016</p>      
-        <a id="mail" href="mailto:milosdjakovic@outlook.com.com?Subject=Hello" target="_top">&#8608;Send Mail&#8606;</a>     
-    </footer>
-                
-        </div> <!--Closes main div-->  
-        
-        
-        
-        <div id="to_top_div"><a id="to_top_anchor" href="#menu_margin"></a></div> 
-    </body>
-        
-        <script src="jquery-3.1.1.min.js"></script>
-        <script src="script.js"></script>
-        <script src="pushy.min.js"></script>
-        <script src="zenscroll-min.js"></script>
 </html>
-
-
-
 
 
 
