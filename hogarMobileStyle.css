@@ -155,7 +155,7 @@
     height: 50px;
 		width: 50%;
 		float: right;
-		transition: box-shadow 400ms;
+		transition: box-shadow 250ms;
 		opacity: 0;
 		outline: none;
 	}
