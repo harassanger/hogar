@@ -22,6 +22,41 @@ body {
     height: 50px;
 }*/
 
+#switchDiv {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background: url(Images/FastFoodDrawnPattern.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+  }
+
+  #switchDivTitle {
+    top: 20vh;
+    position: relative;
+    color: white;
+    width: 700px;
+    margin: 0 auto;
+    height: 180px;
+    border: 10px solid #F55C22;
+    box-shadow: 0 0 0 10px #1b1b1b;
+    background-color: #1b1b1b;
+  }
+
+  #switchTitle {
+    font-family: 'Freckle Face', cursive;
+    font-size: 100px;
+  }
+
+  #switchSpan{
+    font-size: 60px;
+    margin-top: -30px;
+    font-family: 'Amatic SC', cursive;
+  }
+
 #bigDiv {
     background-image: url(Images/white-wall.png);
     width: 700px;

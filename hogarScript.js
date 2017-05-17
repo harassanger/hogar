@@ -5,13 +5,22 @@ $(document).ready(function() {
 	// 	setTimeout(function() {
 	// 		$('#bigDiv').show();
 	// 	}, 50)
-	// }
+	// 
 
-	function animateFadeDiv() {
-		$('#bigDiv').hide();
+	var hogarNumber = 0;
 
-			$('#bigDiv').show();
+	function animateFadeDivOne() {
+		$('#switchDiv').show( "blind", { direction: "left"  }, 200 );
+		setTimeout(function() {
+			$('#switchDiv').hide( "blind", { direction: "right"  }, 200 );
+		}, 600);
+	}
 
+	function animateFadeDivTwo() {
+		$('#switchDiv').show( "blind", { direction: "right"  }, 200 );
+		setTimeout(function() {
+			$('#switchDiv').hide( "blind", { direction: "left"  }, 300 );
+		}, 600);
 	}
 
 
@@ -28,6 +37,7 @@ $(document).ready(function() {
 			$('#hogar_svg_head').css('transform', 'scaleX(-1)');
 			$('body').css('color', '#1b1b1b');
 			$('#prikazTelefona').text('060 68 38 58 6');
+			$('#map_img').attr('src', 'Images/HogarSvgMapOne.svg');
 		}, 200)
 	}
 
@@ -43,54 +53,56 @@ $(document).ready(function() {
 			$('#hogar_svg_head').css('transform', 'scaleX(1)');
 			$('body').css('color', '#f2f2f2');
 			$('#prikazTelefona').text('060 68 38 58 7');
+			$('#map_img').attr('src', 'Images/HogarSvgMapTwo.svg');
 		}, 200)
 	}
 
 	function hogarOneSwitch() {
 
-		fadeMainDivOne();
+		if(hogarNumber == 2 || hogarNumber == 0) { 
+			fadeMainDivOne();
 
+			setTimeout(function() {
+				scrollToTop();
+				$('#hogarOneSlideMenu').show();
+				$('#hogarTwoSlideMenu').hide();
+			$('#hogarOneBtnMobile, #hogarOneBtn').css('box-shadow', 'inset 0 5px #F55C22');
+			$('#hogarTwoBtnMobile, #hogarTwoBtn').css('box-shadow', 'inset 0 -5px #F55C22');
+			}, 200);
 
-		$('#hogarTwoSlideMenu').slideUp(300);
-		setTimeout(function() {
-			$('#hogarOneSlideMenu').slideDown(300);
-		}, 300);
+			$('#callIconFixed').attr('href', 'tel:+381606838586');
+			$('#brojTelefona').attr('href', 'tel:+381606838586');
 
-		$('#hogarOneBtnMobile, #hogarOneBtn').css('box-shadow', 'inset 0 5px #F55C22');
-		$('#hogarTwoBtnMobile, #hogarTwoBtn').css('box-shadow', 'inset 100vw 0 #F55C22');
-
-		$('#callIconFixed').attr('href', 'tel:+381606838586');
-		$('#brojTelefona').attr('href', 'tel:+381606838586');
-
-		scrollToTop();
-
+			hogarNumber = 1;
+	  }
 	}
 	
 	function hogarTwoSwitch() {
+
+		if(hogarNumber == 1 || hogarNumber == 0){
+			fadeMainDivTwo();
+
+			setTimeout(function() {
+				scrollToTop();
+				$('#hogarOneSlideMenu').hide();
+				$('#hogarTwoSlideMenu').show();
+			$('#hogarOneBtnMobile, #hogarOneBtn').css('box-shadow', 'inset 0 -5px #F55C22');
+			$('#hogarTwoBtnMobile, #hogarTwoBtn').css('box-shadow', 'inset 0 5px #F55C22');
+			}, 200);
 		
-		fadeMainDivTwo();
-
-
-		$('#hogarOneSlideMenu').slideUp(300);
-		setTimeout(function() {
-			$('#hogarTwoSlideMenu').slideDown(300);
-		}, 200);
-
-		$('#hogarOneBtnMobile, #hogarOneBtn').css('box-shadow', 'inset -100vw 0 #F55C22');
-		$('#hogarTwoBtnMobile, #hogarTwoBtn').css('box-shadow', 'inset 0 5px #F55C22');
+			$('#callIconFixed').attr('href', 'tel:+381606838587');
+			$('#brojTelefona').attr('href', 'tel:+381606838587');
 	
-		$('#callIconFixed').attr('href', 'tel:+381606838587');
-		$('#brojTelefona').attr('href', 'tel:+381606838587');
-
-		scrollToTop();
-
+			hogarNumber = 2;
+		}
 	}
 	
 	//Prevents scrolling to top if menu is visible-
 	//-when menu button is pressed
 	function scrollToTop() {
 		if($("#navMenu").is(':visible') === false) {
-			$('#toTopAnchor')[0].click();
+			// $('#toTopAnchor')[0].click();
+			window.scrollTo(0, 0);
 		} else if($("#navMenu").is(':visible') === true) {
 			
 		}
@@ -128,7 +140,7 @@ $(document).ready(function() {
 	
 	function mobileAnimation() {
 		
-		$('#hogarOverlaySvg').animate({bottom: '-50%'}, 300).hide(100);
+		$('#hogarOverlaySvg').animate({bottom: '-50vh'}, 300).hide(100);
 		
 		setTimeout(btnTimeOut, 280);
 		setTimeout(hogarSvgSlide, 300);
@@ -157,13 +169,13 @@ $(document).ready(function() {
 		$('#hogarTwoBtnMobile').css('box-shadow', 'none');
 	}
 
-	$('#mobileOverlayButtonOne').on('click', function() {
+	$('#mobileOverlayButtonOne').on('click', function() {	
 		hogarOneSwitch();
 		mobileAnimation();
 		enableScroll();
 	});
 	
-	$('#mobileOverlayButtonTwo').on('click', function() {
+	$('#mobileOverlayButtonTwo').on('click', function() {		
 		hogarTwoSwitch();
 		mobileAnimation();
 		enableScroll();
@@ -195,21 +207,25 @@ $(document).ready(function() {
 	
 	$('#hogarOneBtn').on('click', function() {
 		hogarOneSwitch();
+		animateFadeDivOne();
 	});
 	
 	$('#hogarTwoBtn').on('click', function() {
 		hogarTwoSwitch();
+		animateFadeDivTwo();
 	});
 	
 	$('#hogarOneBtnMobile').on('click', function() {
 
 		hogarOneSwitch();
+		animateFadeDivOne();
 
 	});
 	
 	$('#hogarTwoBtnMobile').on('click', function() {
 
 		hogarTwoSwitch();
+		animateFadeDivTwo();
 
 	});
 	

@@ -13,6 +13,43 @@
   	
   }
 
+  #switchDiv {
+  	width: 100vw;
+  	height: 100vh;
+  	display: none;
+  	background: url(Images/FastFoodDrawnPattern.jpg);
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	z-index: 4;
+  }
+
+  #switchDivTitle {
+		top: 20vh;
+  	position: relative;
+  	color: white;
+  	height: 180px;
+  	width: 100vw;
+  	border: 0px;
+  	border-top: 10px solid #F55C22;
+  	border-bottom: 10px solid #F55C22;
+  	box-shadow: 0 10px #1b1b1b,
+  							0 -10px #1b1b1b;
+  	background-color: #1b1b1b;
+  }
+
+  #switchTitle {
+  	font-family: 'Freckle Face', cursive;
+  	font-size: 100px;
+  }
+
+  #switchSpan{
+  	font-size: 60px;
+  	margin-top: -30px;
+		font-family: 'Amatic SC', cursive;
+  }
+
   #bigDiv {
 	  width: 100%;
   }
@@ -155,7 +192,6 @@
     height: 50px;
 		width: 50%;
 		float: right;
-		transition: box-shadow 500ms;
 		opacity: 0;
 		outline: none;
 	}
@@ -319,7 +355,7 @@
 
 	#slideMenu{
 		width: 100%;
-		z-index: 5;
+		z-index: 3;
 	}
 
 	#slideMenu ul{
@@ -378,6 +414,7 @@
 		min-width: 220px;
 		right: 0px;
 		padding: : 0 20px;
+
 	}
 /*
 	#blurMenuBack {
