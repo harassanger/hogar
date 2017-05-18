@@ -7,19 +7,26 @@ $(document).ready(function() {
 	// 	}, 50)
 	// 
 
+	//Disables Scroll at the loading of the page
+	disableScroll();
+
 	var hogarNumber = 0;
 
 	function animateFadeDivOne() {
 		$('#switchDiv').show( "blind", { direction: "left"  }, 200 );
+		$('#hogarOverlaySvg').css('bottom', '0');
 		setTimeout(function() {
 			$('#switchDiv').hide( "blind", { direction: "right"  }, 200 );
+			$('#hogarOverlaySvg').css('bottom', '-50vh');
 		}, 600);
 	}
 
 	function animateFadeDivTwo() {
 		$('#switchDiv').show( "blind", { direction: "right"  }, 200 );
+		$('#hogarOverlaySvg').css('bottom', '0');
 		setTimeout(function() {
-			$('#switchDiv').hide( "blind", { direction: "left"  }, 300 );
+			$('#switchDiv').hide( "blind", { direction: "left"  }, 200 );
+			$('#hogarOverlaySvg').css('bottom', '-50vh');
 		}, 600);
 	}
 
@@ -62,6 +69,9 @@ $(document).ready(function() {
 		if(hogarNumber == 2 || hogarNumber == 0) { 
 			fadeMainDivOne();
 
+			$('#hogarOneBtnMobile').prop('disabled', true);
+			$('#hogarTwoBtnMobile').prop('disabled', false);
+
 			setTimeout(function() {
 				scrollToTop();
 				$('#hogarOneSlideMenu').show();
@@ -82,6 +92,9 @@ $(document).ready(function() {
 		if(hogarNumber == 1 || hogarNumber == 0){
 			fadeMainDivTwo();
 
+			$('#hogarOneBtnMobile').prop('disabled', false);
+			$('#hogarTwoBtnMobile').prop('disabled', true);
+
 			setTimeout(function() {
 				scrollToTop();
 				$('#hogarOneSlideMenu').hide();
@@ -94,6 +107,13 @@ $(document).ready(function() {
 			$('#brojTelefona').attr('href', 'tel:+381606838587');
 	
 			hogarNumber = 2;
+		}
+	}
+
+	//Prevent switch function for the same menu
+	function preventDoubleSwitch() {
+		if($('#hogar').text() == 'HOGAR 1') {
+			$('#hogarOneBtnMobile').prop('disabled', true);
 		}
 	}
 	
@@ -140,7 +160,7 @@ $(document).ready(function() {
 	
 	function mobileAnimation() {
 		
-		$('#hogarOverlaySvg').animate({bottom: '-50vh'}, 300).hide(100);
+		$('#hogarOverlaySvg').css('bottom', '-50vh');
 		
 		setTimeout(btnTimeOut, 280);
 		setTimeout(hogarSvgSlide, 300);

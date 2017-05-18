@@ -26,7 +26,10 @@ body {
     width: 100vw;
     height: 100vh;
     display: none;
-    background: url(Images/FastFoodDrawnPattern.jpg);
+    background-image: url(Images/FastFoodDrawnPattern.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    background-size: initial;
     position: fixed;
     top: 0;
     left: 0;
